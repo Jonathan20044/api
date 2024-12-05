@@ -1,9 +1,7 @@
 <?php
 // Clase Conectar para manejar la conexión a la base de datos
 class Conectar {
-    // Variable protegida para almacenar la instancia de la conexión
-    protected $conexion_bd;
-    
+
     // Método protegido para establecer la conexión con la base de datos
     protected function conectar_bd() {
         <?php
