@@ -8,7 +8,7 @@ class Conectar {
     protected function conectar_bd() {
         try {
             // Configuración de conexión a la base de datos proporcionada por Railway
-            $host = "junction.proxy.rlwy.net:55638"; // Host proporcionado
+            $host = "mysql.railway.internal"; // Host interno de Railway
             $dbname = "sistema_ventas_motos"; // Nombre de la base de datos
             $user = "root"; // Usuario
             $password = "rHIvtfJQPmmdvubZiwYmVSpFIeHrThIX"; // Contraseña
@@ -22,7 +22,7 @@ class Conectar {
             $this->conexion_bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             return $conexion;
-        } catch (Exception $e) {
+        } catch (PDOException $e) {
             // Si ocurre un error, muestra el mensaje de error y detiene la ejecución
             print "Error en la base de datos: " . $e->getMessage() . "<br/>";
             die(); // Detiene la ejecución
