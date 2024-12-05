@@ -8,7 +8,7 @@ class Conectar {
     protected function conectar_bd() {
         try {
             // Configuración de conexión a la base de datos proporcionada por Railway
-            $host = "mysql.railway.internal"; // Host proporcionado
+            $host = "junction.proxy.rlwy.net:55638"; // Host proporcionado
             $dbname = "sistema_ventas_motos"; // Nombre de la base de datos
             $user = "root"; // Usuario
             $password = "rHIvtfJQPmmdvubZiwYmVSpFIeHrThIX"; // Contraseña
