@@ -7,13 +7,25 @@ class Conectar {
     // Método protegido para establecer la conexión con la base de datos
     protected function conectar_bd() {
         try {
+            // Configuración de conexión a la base de datos proporcionada por Railway
+            $host = "mysql.railway.internal"; // Host proporcionado
+            $dbname = "sistema_ventas_motos"; // Nombre de la base de datos
+            $user = "root"; // Usuario
+            $password = "rHIvtfJQPmmdvubZiwYmVSpFIeHrThIX"; // Contraseña
+            $port = "3306"; // Puerto
+            
             // Establece la conexión utilizando PDO
-            $conexion = $this->conexion_bd = new PDO("mysql:host=localhost;dbname=sistema_ventas_motos2", "root", "");
+            $dsn = "mysql:host=$host;port=$port;dbname=$dbname";
+            $conexion = $this->conexion_bd = new PDO($dsn, $user, $password);
+            
+            // Configuración adicional para manejar errores
+            $this->conexion_bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
             return $conexion;
         } catch (Exception $e) {
             // Si ocurre un error, muestra el mensaje de error y detiene la ejecución
             print "Error en la base de datos: " . $e->getMessage() . "<br/>";
-            die();  // Detiene la ejecución
+            die(); // Detiene la ejecución
         }
     }
 
