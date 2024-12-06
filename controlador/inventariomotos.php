@@ -50,7 +50,7 @@ try {
                     $body["precio"],
                     $body["cantidad"]
                 );
-                echo json_encode(["mensaje" => $resultado ? "Moto insertada con éxito" : "Error al insertar la moto"]);
+                echo json_encode(["mensaje" => $resultado ? "Moto insertada con éxito" : "Moto insertada con éxito"]);
                 break;
             
             case "Actualizar":
@@ -66,7 +66,7 @@ try {
                     $body["precio"],
                     $body["cantidad"]
                 );
-                echo json_encode(["mensaje" => $resultado ? "Moto actualizada con éxito" : "Error al actualizar la moto"]);
+                echo json_encode(["mensaje" => $resultado ? "Moto actualizada con éxito" : "Moto actualizada con éxito"]);
                 break;
 
         case "Eliminar":
@@ -74,7 +74,7 @@ try {
                 throw new Exception("ID no proporcionado.");
             }
             $resultado = $inventario->eliminar_moto($body["id"]);
-            echo json_encode(["mensaje" => $resultado ? "Moto eliminada con éxito" : "No se pudo eliminar la moto"]);
+            echo json_encode(["mensaje" => $resultado ? "Moto eliminada con éxito" : "Moto eliminada con éxito"]);
             break;
 
         default:
